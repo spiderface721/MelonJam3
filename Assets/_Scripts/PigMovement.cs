@@ -89,7 +89,7 @@ public class PigMovement : MonoBehaviour
     {
         //CheckForBlocks(Vector2.right);
         //moveDir = 6;
-        MoveToMoveDir(transform);
+        //MoveToMoveDir(transform);
     }
 
     // Update is called once per frame

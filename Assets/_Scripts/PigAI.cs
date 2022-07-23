@@ -8,11 +8,11 @@ public class PigAI : MonoBehaviour
     [SerializeField] int movesPerSample;
 
     [SerializeField] List<int> bestSequence = new List<int>();
-    [SerializeField] List<int> currentSequence = new List<int>();
 
     [SerializeField] float bestClosestDst = 9999999f;
     [SerializeField] float closestDst = 9999999f;
 
+    [SerializeField] List<int> currentSequence = new List<int>();
     [SerializeField] bool hasFoundEnd = false;
 
     [SerializeField] GameObject ghostPig;
@@ -37,9 +37,10 @@ public class PigAI : MonoBehaviour
         {
             currentSequence.Clear();
             ghostPig.transform.position = transform.position;
+            closestDst = 9999999f;
+            hasFoundEnd = false;
             for (int j = 0; j < movesPerSample && !hasFoundEnd; j++)
             {
-                Debug.Log("J");
                 int currentDir;
                 currentDir = pigMovement.RandomizeDir();
                 if (pigMovement.MoveToMoveDir(ghostPig.transform))
@@ -48,6 +49,7 @@ public class PigAI : MonoBehaviour
 
                     foreach (GameObject go in listOfEdgeTiles)
                     {
+                        Debug.Log(Vector2.Distance(ghostPig.transform.position, go.transform.position) < closestDst);
                         if (Vector2.Distance(ghostPig.transform.position, go.transform.position) < closestDst)
                         {
                             closestDst = Vector2.Distance(ghostPig.transform.position, go.transform.position);
@@ -56,15 +58,20 @@ public class PigAI : MonoBehaviour
                     if (closestDst < 0.5f)
                     {
                         hasFoundEnd = true;
+                        Debug.Log("FOUND IT!!!");
                     }
                 }
+                else j--;
             }
-                Debug.Log(currentSequence.Count);
-                Debug.Log(bestSequence.Count);
+            //Debug.Break();
+                //Debug.Log(currentSequence.Count);
+                //Debug.Log(bestSequence.Count);
             if (currentSequence.Count < bestSequence.Count || isFirstRun)
             {
+                Debug.Log("I CANT SEE A DAMN THING IF IT AINT GUAP");
+                bestSequence.Clear();
+                bestSequence.AddRange(currentSequence);
                 bestClosestDst = closestDst;
-                bestSequence = currentSequence;
                 if (isFirstRun)
                 {
                     isFirstRun = false;
@@ -72,11 +79,14 @@ public class PigAI : MonoBehaviour
             }
             else if (currentSequence.Count == bestSequence.Count)
             {
-                Debug.Log("YEP");
+                Debug.Log(closestDst);
+                Debug.Log(bestClosestDst);
                 if (closestDst < bestClosestDst)
                 {
+                    Debug.Log("YEP");
+                    bestSequence.Clear();
+                    bestSequence.AddRange(currentSequence);
                     bestClosestDst = closestDst;
-                    bestSequence = currentSequence;
                 }
             }
         }
