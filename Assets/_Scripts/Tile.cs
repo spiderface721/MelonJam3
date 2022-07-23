@@ -11,6 +11,10 @@ public class Tile : MonoBehaviour
     void Start()
     {
         CheckIfEdge();
+        if (isEdge)
+        {
+            FindObjectOfType<PigAI>().listOfEdgeTiles.Add(gameObject);
+        }
     }
 
     public void OnClick()
@@ -32,7 +36,6 @@ public class Tile : MonoBehaviour
     {
         for (int i = 0; i < 360; i += 50)
         {
-            Debug.Log(i);
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(DegreeToVector2(i)), 10f);
             if (!(hit && hit == gameObject))
             {

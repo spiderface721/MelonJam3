@@ -9,47 +9,59 @@ public class PigMovement : MonoBehaviour
     [SerializeField] float movementDistanceTopBottomX;
     [SerializeField] float movementDistanceTopBottomY;
 
-    [SerializeField] int moveDir;    //1 - left, rest clockwise
+    public int moveDir;    //1 - left, rest clockwise
 
-    void RandomizeDir()
+    public int RandomizeDir()
     {
-        moveDir = Random.Range(1, 7);      
+        moveDir = Random.Range(1, 7);
+        return moveDir;
     }
-    void MoveToMoveDir()
+    public bool MoveToMoveDir(Transform objectsTransform)
     {
-        Debug.Log(moveDir);
         switch (moveDir)
         {
             case 1:
-                MoveInDirIfPossible(new Vector2(-movementDistanceSides, 0f));
-                break;
+                if (MoveInDirIfPossible(new Vector2(-movementDistanceSides, 0f), objectsTransform))
+                    return true;
+                else
+                    return false;
             case 2:
-                MoveInDirIfPossible(new Vector2(-movementDistanceTopBottomX, movementDistanceTopBottomY));
-                break;
+                if (MoveInDirIfPossible(new Vector2(-movementDistanceTopBottomX, movementDistanceTopBottomY), objectsTransform))
+                    return true;
+                else
+                    return false;
             case 3:
-                MoveInDirIfPossible(new Vector2(movementDistanceTopBottomX, movementDistanceTopBottomY));
-                break;
+                if (MoveInDirIfPossible(new Vector2(movementDistanceTopBottomX, movementDistanceTopBottomY), objectsTransform))
+                    return true;
+                else 
+                    return false;
             case 4:
-                MoveInDirIfPossible(new Vector2(movementDistanceSides, 0));
-                break;
+                if (MoveInDirIfPossible(new Vector2(movementDistanceSides, 0),objectsTransform))
+                    return true;
+                else
+                    return false;
             case 5:
-                MoveInDirIfPossible(new Vector2(movementDistanceTopBottomX, -movementDistanceTopBottomY));
-                break;
+                if (MoveInDirIfPossible(new Vector2(movementDistanceTopBottomX, -movementDistanceTopBottomY), objectsTransform))
+                    return true;
+                else
+                    return false;
             case 6:
-                MoveInDirIfPossible(new Vector2(-movementDistanceTopBottomX, -movementDistanceTopBottomY));
-                break;
+                if (MoveInDirIfPossible(new Vector2(-movementDistanceTopBottomX, -movementDistanceTopBottomY),objectsTransform))
+                    return true;
+                else
+                    return false;
             default:
                 Debug.LogError("MOVE DIRECTION NUMBER NOT IDenTIFIED");
-                break;
+                return false;
         }
 
     }
 
-    bool MoveInDirIfPossible(Vector3 newVector)
+    bool MoveInDirIfPossible(Vector3 newVector, Transform objectsTransform)
     {
-        if (!CheckForBlocks(newVector.normalized))
+        if (!CheckForBlocks(newVector.normalized,objectsTransform))
         {
-            transform.position += newVector;    //MOVE
+            objectsTransform.position += newVector;    //MOVE
             return true;
         }
         else
@@ -59,17 +71,16 @@ public class PigMovement : MonoBehaviour
         }
     }
 
-    bool CheckForBlocks(Vector2 raycastRotation)
+    bool CheckForBlocks(Vector2 raycastRotation, Transform objectsTransform)
     {
         int layer_mask = LayerMask.GetMask("Block");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(raycastRotation), 10f, layer_mask);
+        RaycastHit2D hit = Physics2D.Raycast(objectsTransform.position, objectsTransform.TransformDirection(raycastRotation), 10f, layer_mask);
         if (hit)
         {
             return true;
         }
         else
         {
-            Debug.Log("NO HIT");
             return false;
         }
     }
@@ -78,11 +89,12 @@ public class PigMovement : MonoBehaviour
     {
         //CheckForBlocks(Vector2.right);
         //moveDir = 6;
-        MoveToMoveDir();
+        MoveToMoveDir(transform);
     }
 
     // Update is called once per frame
     void Update()
     {
+
     }
 }
