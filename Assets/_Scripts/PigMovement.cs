@@ -61,13 +61,15 @@ public class PigMovement : MonoBehaviour
 
     bool CheckForBlocks(Vector2 raycastRotation)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(raycastRotation), 10f);
+        int layer_mask = LayerMask.GetMask("Block");
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(raycastRotation), 10f, layer_mask);
         if (hit)
         {
             return true;
         }
         else
         {
+            Debug.Log("NO HIT");
             return false;
         }
     }
@@ -75,7 +77,7 @@ public class PigMovement : MonoBehaviour
     void Start()
     {
         //CheckForBlocks(Vector2.right);
-        moveDir = 6;
+        //moveDir = 6;
         MoveToMoveDir();
     }
 
