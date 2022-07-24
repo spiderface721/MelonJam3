@@ -198,7 +198,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 70
-    width: 70.4
+    width: 70
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 57296952}
   selectedCommands:
-  - {fileID: 57297119}
+  - {fileID: 57297138}
   variables: []
   description: 
   stepPause: 0
@@ -680,7 +680,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 58.50702
     y: 207.79333
-    width: 75.6
+    width: 75
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1568,9 +1568,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 110
   indentLevel: 0
-  storyText: Nyx moves her arm forward, revealing a syringe filled with bubbling
-    green formula.{wc}When you glance up in shock and fear, her eyes shimmer with
-    a strange sort of fascination.
+  storyText: "Nyx brings her arm forward, revealing a syringe filled with a bubbling
+    green formula.{wc} When you glance up in shock, her eyes shimmer with a strange
+    sort of fascination. \r\n"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-    private int score;
+    [SerializeField] private int score;
     
     void Awake() {
         

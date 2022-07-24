@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MinigameManager : MonoBehaviour
 {
+    [SerializeField] bool isLastMinigame;
+
     [SerializeField] int firstRunBlocks;
     [SerializeField] int normalBlocksAmount;
 
@@ -49,7 +51,22 @@ public class MinigameManager : MonoBehaviour
 
     public void HandleWin()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (isLastMinigame)
+        {
+            if (GameObject.FindGameObjectWithTag("manager").gameObject.GetComponent<Manager>().getScore() >= 13)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            }
+           
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     public void HandleLoss()
