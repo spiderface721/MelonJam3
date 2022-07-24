@@ -47,7 +47,7 @@ public class PigAI : MonoBehaviour
             {
                 int currentDir;
                 currentDir = pigMovement.RandomizeDir();
-                if (pigMovement.MoveToMoveDir(ghostPig.transform))
+                if (pigMovement.MoveToMoveDir(ghostPig.transform, false))
                 {
                     currentSequence.Add(currentDir);
 
@@ -68,7 +68,6 @@ public class PigAI : MonoBehaviour
             }
             if (currentSequence.Count < bestSequence.Count || isFirstRun)
             {
-                Debug.Log("I CANT SEE A DAMN THING IF IT AINT GUAP");
                 bestSequence.Clear();
                 bestSequence.AddRange(currentSequence);
                 bestClosestDst = closestDst;

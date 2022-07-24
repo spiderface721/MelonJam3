@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PigMovement : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class PigMovement : MonoBehaviour
 
     [SerializeField] List<int> bestSequence = new List<int>();
 
+    [SerializeField] Vector2 target;
+    [SerializeField] bool isMovingToTarget;
+    [SerializeField] float moveSpeed;
+    [SerializeField] List<Vector3> targetsList = new List<Vector3>();
+     
     PigAI pigAI;
 
     public int moveDir;    //1 - left, rest clockwise
@@ -18,7 +24,23 @@ public class PigMovement : MonoBehaviour
     void Start()
     {
         pigAI = GetComponent<PigAI>();
-        DoBestMoves(3);
+        DoBestMoves(1);
+    }
+
+    void Update()
+    {
+        if (isMovingToTarget)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, targetsList[0], moveSpeed * Time.deltaTime);    
+            if (transform.position.x == targetsList[0].x && transform.position.y == targetsList[0].y)
+            {
+                targetsList.RemoveAt(0);
+                if (!targetsList.Any())
+                {
+                    isMovingToTarget = false;
+                }
+            }
+        }
     }
     public void DoBestMoves(int movesAmount)
     {
@@ -27,7 +49,7 @@ public class PigMovement : MonoBehaviour
         {
             Debug.Log("MOVE bee GET OUT THE WAy");
             moveDir = bestSequence[i];
-            MoveToMoveDir(transform);
+            MoveToMoveDir(transform, true);
         }
     }
     public int RandomizeDir()
@@ -35,37 +57,37 @@ public class PigMovement : MonoBehaviour
         moveDir = Random.Range(1, 7);
         return moveDir;
     }
-    public bool MoveToMoveDir(Transform objectsTransform)
+    public bool MoveToMoveDir(Transform objectsTransform, bool isSlow)
     {
         switch (moveDir)
         {
             case 1:
-                if (MoveInDirIfPossible(new Vector2(-movementDistanceSides, 0f), objectsTransform))
+                if (MoveInDirIfPossible(new Vector2(-movementDistanceSides, 0f), objectsTransform, isSlow))
                     return true;
                 else
                     return false;
             case 2:
-                if (MoveInDirIfPossible(new Vector2(-movementDistanceTopBottomX, movementDistanceTopBottomY), objectsTransform))
+                if (MoveInDirIfPossible(new Vector2(-movementDistanceTopBottomX, movementDistanceTopBottomY), objectsTransform, isSlow))
                     return true;
                 else
                     return false;
             case 3:
-                if (MoveInDirIfPossible(new Vector2(movementDistanceTopBottomX, movementDistanceTopBottomY), objectsTransform))
+                if (MoveInDirIfPossible(new Vector2(movementDistanceTopBottomX, movementDistanceTopBottomY), objectsTransform, isSlow))
                     return true;
                 else 
                     return false;
             case 4:
-                if (MoveInDirIfPossible(new Vector2(movementDistanceSides, 0),objectsTransform))
+                if (MoveInDirIfPossible(new Vector2(movementDistanceSides, 0),objectsTransform, isSlow))
                     return true;
                 else
                     return false;
             case 5:
-                if (MoveInDirIfPossible(new Vector2(movementDistanceTopBottomX, -movementDistanceTopBottomY), objectsTransform))
+                if (MoveInDirIfPossible(new Vector2(movementDistanceTopBottomX, -movementDistanceTopBottomY), objectsTransform, isSlow))
                     return true;
                 else
                     return false;
             case 6:
-                if (MoveInDirIfPossible(new Vector2(-movementDistanceTopBottomX, -movementDistanceTopBottomY),objectsTransform))
+                if (MoveInDirIfPossible(new Vector2(-movementDistanceTopBottomX, -movementDistanceTopBottomY),objectsTransform, isSlow))
                     return true;
                 else
                     return false;
@@ -76,11 +98,30 @@ public class PigMovement : MonoBehaviour
 
     }
 
-    bool MoveInDirIfPossible(Vector3 newVector, Transform objectsTransform)
+    bool MoveInDirIfPossible(Vector3 newVector, Transform objectsTransform, bool isSlow)
     {
         if (!CheckForBlocks(newVector.normalized,objectsTransform))
         {
-            objectsTransform.position += newVector;    //MOVE
+            if (isSlow)
+            {
+                Debug.Log("HEY!");
+                if (!targetsList.Any())
+                {
+                    targetsList.Add(newVector);
+                }
+                else
+                {
+                    Vector2 finalTarget;
+                Debug.Log(targetsList.Count);
+                    finalTarget = newVector + targetsList[targetsList.Count - 1];
+                    targetsList.Add(finalTarget);         //MOVE THE REAL PIG
+                }
+                isMovingToTarget = true;
+            }
+            else
+            {
+                objectsTransform.position += newVector;    //TP
+            }
             return true;
         }
         else
