@@ -7,7 +7,13 @@ public class Tile : MonoBehaviour
     [SerializeField] GameObject blockPrefab;
 
     [SerializeField] bool isEdge;
+
+    MinigameManager minigameManager;
     // Start is called before the first frame update
+    void Awake()
+    {
+        minigameManager = FindObjectOfType<MinigameManager>();    
+    }
     void Start()
     {
         CheckIfEdge();
@@ -19,7 +25,19 @@ public class Tile : MonoBehaviour
 
     public void OnClick()
     {
-        Instantiate(blockPrefab, transform.position, Quaternion.identity);
+        if (minigameManager.blocksAvailable > 0)
+        {
+            Instantiate(blockPrefab, transform.position, Quaternion.identity);
+            minigameManager.blocksAvailable--;
+            if (minigameManager.blocksAvailable <= 0)
+            {
+                minigameManager.isHandlingPlacing = false;
+            }
+        }
+        else
+        {
+            Debug.Log("NO BLOCKS AVAILABLEEEEEE!");
+        }
     }
 
     public static Vector2 RadianToVector2(float radian)

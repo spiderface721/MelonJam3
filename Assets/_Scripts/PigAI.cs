@@ -87,6 +87,10 @@ public class PigAI : MonoBehaviour
                 }
             }
         }
+        if (bestClosestDst > 0.4)
+        {
+            Debug.LogWarning("LOOKS LIKE YOU BLOCKED HIM OUT!");
+        }
         return bestSequence;
     }
 
