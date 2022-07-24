@@ -256,6 +256,9 @@ GameObject:
   - component: {fileID: 57297075}
   - component: {fileID: 57297076}
   - component: {fileID: 57297077}
+  - component: {fileID: 57297078}
+  - component: {fileID: 57297080}
+  - component: {fileID: 57297079}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -329,8 +332,10 @@ MonoBehaviour:
   - {fileID: 57296968}
   - {fileID: 57296950}
   - {fileID: 57296960}
-  - {fileID: 57296966}
   - {fileID: 57296967}
+  - {fileID: 57297078}
+  - {fileID: 57296966}
+  - {fileID: 57297079}
   - {fileID: 57297065}
   - {fileID: 57296969}
   - {fileID: 57296972}
@@ -363,9 +368,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 57297014}
+  - {fileID: 57296952}
   selectedCommands:
-  - {fileID: 57297058}
+  - {fileID: 57297079}
   variables: []
   description: 
   stepPause: 0
@@ -504,11 +509,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  storyText: "You press your hand to your head, wincing as the dull throbbing behind
-    your temples suddenly intensifies to a sharp needle-point ache.{wc}As you glance
-    around the room, you note faint scratches on the wall, cracks in the shoddy construction
-    of the toilet, red stains\u2013{w=0.2} blood?\u2013 on the grimy cement floor.{wc}You
-    swallow down your fear, staring wide-eyed as the door slowly creaks open."
+  storyText: You press your hand to your head, wincing as the dull throbbing behind
+    your temples suddenly intensifies to a sharp needle-point ache.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -613,7 +615,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57296949}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea6e8f632db87477eb750446b28d73a3, type: 3}
   m_Name: 
@@ -2092,6 +2094,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 57297080}
   - {fileID: 57297058}
   - {fileID: 57297059}
   - {fileID: 57297057}
@@ -3954,6 +3957,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 131
   indentLevel: 0
+--- !u!114 &57297078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57296949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 132
+  indentLevel: 0
+  storyText: "As you glance around the room, you note faint scratches on the wall,
+    cracks in the shoddy construction of the toilet, red stains\u2013{w=0.2} blood?\u2013
+    on the grimy cement floor.{wc}You swallow down your fear, staring wide-eyed as
+    the door slowly creaks open."
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &57297079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57296949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2f6be51b3d7490ba5633ee095d0391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 134
+  indentLevel: 0
+  soundClip: {fileID: 8300000, guid: 9e8a65e729d20bf419e6a8067a395761, type: 3}
+  volume: 1
+  waitUntilFinished: 1
+--- !u!114 &57297080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57296949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2f6be51b3d7490ba5633ee095d0391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 133
+  indentLevel: 0
+  soundClip: {fileID: 8300000, guid: 9e8a65e729d20bf419e6a8067a395761, type: 3}
+  volume: 1
+  waitUntilFinished: 1
 --- !u!1 &58741986
 GameObject:
   m_ObjectHideFlags: 0
@@ -7436,6 +7503,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ff4eafcbacc8ee740a352e226dca8b0e, type: 3}
   - {fileID: 21300000, guid: 6034ab186c6ce0f4abbbc14c5b64ef2a, type: 3}
   - {fileID: 21300000, guid: 1f3eca80c77d40640a6e80c105ce974c, type: 3}
+  - {fileID: 21300000, guid: b6030c0c77c0b164ca3a4669fcfc07d3, type: 3}
 --- !u!1 &2028860200
 GameObject:
   m_ObjectHideFlags: 0
