@@ -25,7 +25,7 @@ public class PigMovement : MonoBehaviour
         bestSequence = pigAI.FindBestSequence();
         for (int i = 0; i < movesAmount; i++)
         {
-            Debug.Log("MOVE bih GET OUT THE WAy");
+            Debug.Log("MOVE bee GET OUT THE WAy");
             moveDir = bestSequence[i];
             MoveToMoveDir(transform);
         }
