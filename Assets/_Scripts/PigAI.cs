@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PigAI : MonoBehaviour
 {
     [SerializeField] int samples;
@@ -41,7 +42,7 @@ public class PigAI : MonoBehaviour
         {
             if (Vector2.Distance(myTransform.position, go.transform.position) < localClosestDst)
             {
-                localClosestDst = Vector2.Distance(ghostPig.transform.position, go.transform.position);
+                localClosestDst = Vector2.Distance(myTransform.transform.position, go.transform.position);
             }
         }
         return localClosestDst;
@@ -97,16 +98,12 @@ public class PigAI : MonoBehaviour
         }
         if (bestClosestDst > 0.4)
         {
-            HandleWin();
             Debug.LogWarning("LOOKS LIKE YOU BLOCKED HIM OUT!");
+            FindObjectOfType<MinigameManager>().HandleWin();
         }
         return bestSequence;
     }
 
-    void HandleWin()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MinigameManager : MonoBehaviour
 {
@@ -46,6 +47,15 @@ public class MinigameManager : MonoBehaviour
         }
     }
 
+    public void HandleWin()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void HandleLoss()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     
 
     // Update is called once per frame
