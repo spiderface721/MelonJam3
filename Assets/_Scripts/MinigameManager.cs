@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MinigameManager : MonoBehaviour
 {
+    public int minigameIndex;
+
+    [SerializeField] bool isLastMinigame;
+
     [SerializeField] int firstRunBlocks;
     [SerializeField] int normalBlocksAmount;
 
@@ -46,6 +51,31 @@ public class MinigameManager : MonoBehaviour
         }
     }
 
+    public void HandleWin()
+    {
+        if (isLastMinigame)
+        {
+            if (GameObject.FindGameObjectWithTag("manager").gameObject.GetComponent<Manager>().getScore() >= 13)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            }
+           
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
+
+    public void HandleLoss()
+    {
+        FindObjectOfType<Manager>().sceneToComeBackToIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(9);
+    }
     
 
     // Update is called once per frame

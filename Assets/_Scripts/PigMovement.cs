@@ -36,11 +36,10 @@ public class PigMovement : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, targetsList[0], moveSpeed * Time.deltaTime);    
             if (transform.position.x == targetsList[0].x && transform.position.y == targetsList[0].y)
             {
-                Debug.Log("REACHED TARGET!");
-                Debug.Log(pigAI.CalculateClosestEdgeDst(transform));
                 if (pigAI.CalculateClosestEdgeDst(transform) < 0.4f)
                 {
                     Debug.Log("SO BAD LMAO");
+                    FindObjectOfType<MinigameManager>().HandleLoss();
                 }
                 targetsList.RemoveAt(0);
                 if (!targetsList.Any())
@@ -128,7 +127,6 @@ public class PigMovement : MonoBehaviour
             }
             else
             {
-                Debug.Log("NEEEEI");
                 objectsTransform.position += newVector;    //TP
             }
             return true;

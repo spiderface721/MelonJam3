@@ -5,6 +5,8 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
     private int score;
+
+    public int sceneToComeBackToIndex;
     
     void Awake() {
         
