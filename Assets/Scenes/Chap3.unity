@@ -153,7 +153,6 @@ GameObject:
   - component: {fileID: 57297071}
   - component: {fileID: 57297070}
   - component: {fileID: 57297069}
-  - component: {fileID: 57297068}
   - component: {fileID: 57297087}
   - component: {fileID: 57297103}
   - component: {fileID: 57297102}
@@ -183,6 +182,7 @@ GameObject:
   - component: {fileID: 57297107}
   - component: {fileID: 57297106}
   - component: {fileID: 57297115}
+  - component: {fileID: 57297116}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -252,10 +252,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 57296952}
-  selectedCommands:
-  - {fileID: 57297086}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -466,33 +464,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &57297068
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57296949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 56
-  indentLevel: 0
-  storyText: gud job thubms up
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &57297069
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -543,7 +514,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 57297068}
+  - {fileID: 57297116}
   suppressAllAutoSelections: 0
 --- !u!114 &57297071
 MonoBehaviour:
@@ -1752,6 +1723,25 @@ MonoBehaviour:
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &57297116
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57296949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 119
+  indentLevel: 0
+  _sceneName:
+    stringRef: {fileID: 0}
+    stringVal: Level3
+  loadingImage: {fileID: 0}
+  sceneNameOLD: 
 --- !u!1 &165022306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,6 +1851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1cb3d0d4031fb488172de0f51fcda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToComeBackToIndex: 0
 --- !u!4 &200169819
 Transform:
   m_ObjectHideFlags: 0
@@ -5330,8 +5321,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994569824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0.05, z: 0}
-  m_LocalScale: {x: 0.39619353, y: 0.39578825, z: 1.0689455}
+  m_LocalPosition: {x: 0.0032, y: 0.0425, z: 0}
+  m_LocalScale: {x: 0.46894515, y: 0.46846545, z: 1.2652323}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5744,8 +5735,8 @@ MonoBehaviour:
   nameColor: {r: 0.48235294, g: 0.41960785, b: 0.41960785, a: 1}
   soundEffect: {fileID: 0}
   portraits:
+  - {fileID: 21300000, guid: 9a55b9c2a0ef5554fb1824e11ed6a5e9, type: 3}
   - {fileID: 21300000, guid: fdabefa57961a30408c92e5d161410e6, type: 3}
-  - {fileID: 21300000, guid: 9907367cb9df6084a8236aeefa25e2c4, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
