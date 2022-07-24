@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 57297108}
   - component: {fileID: 57297107}
   - component: {fileID: 57297106}
+  - component: {fileID: 57297115}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -214,6 +215,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 57297062}
   commandList:
+  - {fileID: 57297115}
   - {fileID: 57296959}
   - {fileID: 57296973}
   - {fileID: 57297105}
@@ -251,9 +253,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 57297077}
+  - {fileID: 57296952}
   selectedCommands:
-  - {fileID: 57297107}
+  - {fileID: 57297115}
   variables: []
   description: 
   stepPause: 0
@@ -1694,6 +1696,62 @@ MonoBehaviour:
   move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 0
+--- !u!114 &57297115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57296949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d9ff288f3904c05ada7ac9c9a075bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 91
+  indentLevel: 0
+  description: 
+  delay: 0
+  invokeType: 0
+  staticEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2138064041}
+        m_TargetAssemblyTypeName: GetManager, Assembly-CSharp
+        m_MethodName: setMinigamesFinished
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  booleanParameter:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  booleanEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  integerParameter:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  integerEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  floatParameter:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  floatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  stringParameter:
+    stringRef: {fileID: 0}
+    stringVal: 
+  stringEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &165022306
 GameObject:
   m_ObjectHideFlags: 0
@@ -5686,8 +5744,8 @@ MonoBehaviour:
   nameColor: {r: 0.48235294, g: 0.41960785, b: 0.41960785, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: 9907367cb9df6084a8236aeefa25e2c4, type: 3}
   - {fileID: 21300000, guid: fdabefa57961a30408c92e5d161410e6, type: 3}
+  - {fileID: 21300000, guid: 9907367cb9df6084a8236aeefa25e2c4, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 

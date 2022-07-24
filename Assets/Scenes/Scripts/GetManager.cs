@@ -17,4 +17,8 @@ public class GetManager : MonoBehaviour
     public void addToScore(int a) {
         manager.addToScore(a);
     }
+
+    public void setMinigamesFinished(int b) {
+        manager.setMinigamesFinished(b);
+    }
 }

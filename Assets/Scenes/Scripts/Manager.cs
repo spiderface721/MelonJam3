@@ -12,6 +12,7 @@ public class Manager : MonoBehaviour
         if(e.Length > 1) {
             Destroy(e[0]);
         }
+
         //Debug.Log(backFromNewScene);
         DontDestroyOnLoad(this.gameObject);
     }
@@ -22,5 +23,9 @@ public class Manager : MonoBehaviour
 
     public int getScore() {
         return score;
+    }
+
+    public void setMinigamesFinished(int a) {
+        PlayerPrefs.SetInt("minigames finished", a);
     }
 }

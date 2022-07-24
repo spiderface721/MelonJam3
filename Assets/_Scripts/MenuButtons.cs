@@ -17,6 +17,32 @@ public class MenuButtons : MonoBehaviour
         
     }
 
+
+    public void ContinueGame() {
+        if(!PlayerPrefs.HasKey("minigames finished")) {
+            LoadNewGame();
+            return;
+        }
+        int a = PlayerPrefs.GetInt("minigames finished");
+        switch(a) {
+            case 1:
+                SceneManager.LoadScene("Chap2");
+                break;
+            case 2:
+                SceneManager.LoadScene("Chap3");
+                break;
+            case 3:
+                SceneManager.LoadScene("End1");
+                break;
+            case 4:
+                SceneManager.LoadScene("End2");
+                break;
+            default:
+                SceneManager.LoadScene("Chap1");
+                break;
+        }
+    }
+
     public void LoadNewGame() {
         SceneManager.LoadScene("Chap1");
     }
