@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   samples: 500
-  movesPerSample: 15
+  movesPerSample: 13
   bestSequence: 
   bestClosestDst: 9999999
   closestDst: 9999999
