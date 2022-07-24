@@ -34,6 +34,19 @@ public class PigAI : MonoBehaviour
         
     }
 
+    public float CalculateClosestEdgeDst(Transform myTransform)
+    {
+        float localClosestDst = 9999999;
+        foreach (GameObject go in listOfEdgeTiles)
+        {
+            if (Vector2.Distance(myTransform.position, go.transform.position) < localClosestDst)
+            {
+                localClosestDst = Vector2.Distance(ghostPig.transform.position, go.transform.position);
+            }
+        }
+        return localClosestDst;
+    }
+
     public List<int> FindBestSequence()
     {
         bool isFirstRun = true;
@@ -51,13 +64,8 @@ public class PigAI : MonoBehaviour
                 {
                     currentSequence.Add(currentDir);
 
-                    foreach (GameObject go in listOfEdgeTiles)
-                    {
-                        if (Vector2.Distance(ghostPig.transform.position, go.transform.position) < closestDst)
-                        {
-                            closestDst = Vector2.Distance(ghostPig.transform.position, go.transform.position);
-                        }
-                    }
+                    closestDst = CalculateClosestEdgeDst(ghostPig.transform);
+
                     if (closestDst < 0.5f)
                     {
                         hasFoundEnd = true;
@@ -89,9 +97,15 @@ public class PigAI : MonoBehaviour
         }
         if (bestClosestDst > 0.4)
         {
+            HandleWin();
             Debug.LogWarning("LOOKS LIKE YOU BLOCKED HIM OUT!");
         }
         return bestSequence;
+    }
+
+    void HandleWin()
+    {
+
     }
 
     // Update is called once per frame

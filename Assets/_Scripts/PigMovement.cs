@@ -37,6 +37,11 @@ public class PigMovement : MonoBehaviour
             if (transform.position.x == targetsList[0].x && transform.position.y == targetsList[0].y)
             {
                 Debug.Log("REACHED TARGET!");
+                Debug.Log(pigAI.CalculateClosestEdgeDst(transform));
+                if (pigAI.CalculateClosestEdgeDst(transform) < 0.4f)
+                {
+                    Debug.Log("SO BAD LMAO");
+                }
                 targetsList.RemoveAt(0);
                 if (!targetsList.Any())
                 {
