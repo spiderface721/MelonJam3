@@ -309,7 +309,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 70
-    width: 70.21978
+    width: 70.23528
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -356,11 +356,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 290.70224, y: 16.324436}
+  scrollPos: {x: 394.56705, y: -48.535656}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.9100001
+  zoom: 0.8500004
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -368,9 +368,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 57296952}
+  - {fileID: 57296979}
   selectedCommands:
-  - {fileID: 57297079}
+  - {fileID: 57296974}
   variables: []
   description: 
   stepPause: 0
@@ -822,8 +822,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "\"You\u2019ll live.\"{wc}\"C\u2019mon, isn\u2019t this exciting? I
     bet you\u2019ve never stepped foot outside your village before.\"{wc}\"Your old
-    grandma\u2013 {w=0.5}Aster, was it?\u2013 was working so hard to keep your pretty
-    mouth fed.\"{wc}\"Don\u2019t worry, she won\u2019t have to anymore.\""
+    grandma\u2013 {w=0.5}Aster, was it?\u2013 was working {i}so{/i} hard to keep
+    your pretty mouth fed.\"{wc}\"Don\u2019t worry, she won\u2019t have to anymore.\""
   description: 
   character: {fileID: 1608095670}
   portrait: {fileID: 0}
@@ -1006,7 +1006,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 12
     y: 230
-    width: 177.91208
+    width: 177.52936
     height: 40
   tint: {r: 0.6428266, g: 0.735849, b: 0.7329409, a: 1}
   useCustomTint: 1
@@ -1040,7 +1040,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -103.505066
     y: 122.89014
-    width: 130.43956
+    width: 130.47055
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1069,7 +1069,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 148.2308
     y: 131.85698
-    width: 116.37363
+    width: 116.35291
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1310,7 +1310,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 181.55617
     y: 300.2295
-    width: 81.208786
+    width: 81.05881
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1525,7 +1525,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -146.59459
     y: 302.62964
-    width: 149.78021
+    width: 148.82349
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1555,7 +1555,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 52.121017
     y: 371.52747
-    width: 100.54945
+    width: 99.41174
     height: 40
   tint: {r: 0.70971876, g: 0.81098557, b: 0.8396226, a: 1}
   useCustomTint: 1
@@ -1779,7 +1779,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -127.53992
     y: 424.1014
-    width: 81.208786
+    width: 81.05881
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1808,7 +1808,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 52.52588
     y: 461.1924
-    width: 117.69231
+    width: 116.8235
     height: 40
   tint: {r: 0.7232111, g: 0.79774475, b: 0.8018868, a: 1}
   useCustomTint: 1
@@ -1950,7 +1950,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 186.25757
     y: 426.40936
-    width: 101.42857
+    width: 100.8235
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2085,7 +2085,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 431.51053
     y: 330.9937
-    width: 74.17583
+    width: 73.999985
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 1
@@ -2332,7 +2332,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 287.92
     y: 160.45044
-    width: 113.73626
+    width: 113.99997
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2362,7 +2362,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 419.56558
     y: 237.03445
-    width: 96.15384
+    width: 96.58821
     height: 40
   tint: {r: 0.66187257, g: 0.7180529, b: 0.7830189, a: 1}
   useCustomTint: 1
@@ -2494,7 +2494,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 560.44073
     y: 160.12637
-    width: 158.57143
+    width: 158.70584
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2691,7 +2691,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 432.36896
     y: 71.71254
-    width: 75.05495
+    width: 74.94116
     height: 40
   tint: {r: 0.5225347, g: 0.57399076, b: 0.7735849, a: 1}
   useCustomTint: 1
@@ -3055,7 +3055,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -96.73184
     y: 546.48364
-    width: 74.17583
+    width: 73.999985
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3224,7 +3224,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 169.05302
     y: 541.1802
-    width: 109.34065
+    width: 109.29409
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3277,7 +3277,7 @@ MonoBehaviour:
   itemId: 72
   indentLevel: 0
   storyText: Suddenly, your eyes catch on a piece of paper gently fluttering to the
-    ground.[wc}You reach forwards, only to immediately pull back when a chain reminds
+    ground.{wc}You reach forwards, only to immediately pull back when a chain reminds
     you of its presence.
   description: 
   character: {fileID: 0}
@@ -3941,7 +3941,7 @@ MonoBehaviour:
   itemId: 130
   indentLevel: 0
   soundClip: {fileID: 8300000, guid: 9f93eb84a4469ee4eb36180ca5b1f7eb, type: 3}
-  volume: 0.887
+  volume: 0.369
   loop: 1
 --- !u!114 &57297077
 MonoBehaviour:

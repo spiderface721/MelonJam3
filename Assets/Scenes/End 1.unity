@@ -2072,6 +2072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1cb3d0d4031fb488172de0f51fcda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToComeBackToIndex: 0
 --- !u!4 &200169819
 Transform:
   m_ObjectHideFlags: 0
@@ -6219,7 +6220,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b00aec002c22cf4eacac48e05bb8723, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e8d6cc8fb647b0c4eb07ffdcc5162c14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6258,7 +6259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images:
-  - {fileID: 21300000, guid: ff4eafcbacc8ee740a352e226dca8b0e, type: 3}
+  - {fileID: 21300000, guid: e8d6cc8fb647b0c4eb07ffdcc5162c14, type: 3}
   - {fileID: 21300000, guid: 49a9bb01599c5284896d94f48835270b, type: 3}
   - {fileID: 21300000, guid: 4b00aec002c22cf4eacac48e05bb8723, type: 3}
 --- !u!1 &2033786841

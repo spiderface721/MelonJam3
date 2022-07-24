@@ -387,6 +387,7 @@ GameObject:
   - component: {fileID: 57297099}
   - component: {fileID: 57297100}
   - component: {fileID: 57297101}
+  - component: {fileID: 57297102}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -431,6 +432,7 @@ MonoBehaviour:
   - {fileID: 57297063}
   - {fileID: 57297088}
   - {fileID: 57297086}
+  - {fileID: 57297102}
   - {fileID: 57297087}
   - {fileID: 57297085}
   - {fileID: 57297084}
@@ -469,7 +471,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 57296952}
   selectedCommands:
-  - {fileID: 57297101}
+  - {fileID: 57297102}
   variables: []
   description: 
   stepPause: 0
@@ -1702,6 +1704,24 @@ MonoBehaviour:
   soundClip: {fileID: 8300000, guid: b085ce7686261dd4d8ae0f780be2e999, type: 3}
   volume: 1
   waitUntilFinished: 0
+--- !u!114 &57297102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57296949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 131
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 1
+  durationOLD: 0
 --- !u!1 &83293775
 GameObject:
   m_ObjectHideFlags: 0
@@ -4743,7 +4763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: You
-  nameColor: {r: 1, g: 1, b: 1, a: 1}
+  nameColor: {r: 0.13333334, g: 0.10980392, b: 0.10980392, a: 1}
   soundEffect: {fileID: 0}
   portraits: []
   portraitsFace: 0
