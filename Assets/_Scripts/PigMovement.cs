@@ -9,59 +9,90 @@ public class PigMovement : MonoBehaviour
     [SerializeField] float movementDistanceTopBottomX;
     [SerializeField] float movementDistanceTopBottomY;
 
-    [SerializeField] int moveDir;    //1 - left, rest clockwise
+    [SerializeField] List<int> bestSequence = new List<int>();
 
-    void RandomizeDir()
+    PigAI pigAI;
+
+    public int moveDir;    //1 - left, rest clockwise
+
+    void Start()
     {
-        moveDir = Random.Range(1, 7);      
+        pigAI = GetComponent<PigAI>();
+        DoBestMoves(3);
     }
-    void MoveToMoveDir()
+    public void DoBestMoves(int movesAmount)
     {
-        Debug.Log(moveDir);
+        bestSequence = pigAI.FindBestSequence();
+        for (int i = 0; i < movesAmount; i++)
+        {
+            Debug.Log("MOVE bee GET OUT THE WAy");
+            moveDir = bestSequence[i];
+            MoveToMoveDir(transform);
+        }
+    }
+    public int RandomizeDir()
+    {
+        moveDir = Random.Range(1, 7);
+        return moveDir;
+    }
+    public bool MoveToMoveDir(Transform objectsTransform)
+    {
         switch (moveDir)
         {
             case 1:
-                MoveInDirIfPossible(new Vector2(-movementDistanceSides, 0f));
-                break;
+                if (MoveInDirIfPossible(new Vector2(-movementDistanceSides, 0f), objectsTransform))
+                    return true;
+                else
+                    return false;
             case 2:
-                MoveInDirIfPossible(new Vector2(-movementDistanceTopBottomX, movementDistanceTopBottomY));
-                break;
+                if (MoveInDirIfPossible(new Vector2(-movementDistanceTopBottomX, movementDistanceTopBottomY), objectsTransform))
+                    return true;
+                else
+                    return false;
             case 3:
-                MoveInDirIfPossible(new Vector2(movementDistanceTopBottomX, movementDistanceTopBottomY));
-                break;
+                if (MoveInDirIfPossible(new Vector2(movementDistanceTopBottomX, movementDistanceTopBottomY), objectsTransform))
+                    return true;
+                else 
+                    return false;
             case 4:
-                MoveInDirIfPossible(new Vector2(movementDistanceSides, 0));
-                break;
+                if (MoveInDirIfPossible(new Vector2(movementDistanceSides, 0),objectsTransform))
+                    return true;
+                else
+                    return false;
             case 5:
-                MoveInDirIfPossible(new Vector2(movementDistanceTopBottomX, -movementDistanceTopBottomY));
-                break;
+                if (MoveInDirIfPossible(new Vector2(movementDistanceTopBottomX, -movementDistanceTopBottomY), objectsTransform))
+                    return true;
+                else
+                    return false;
             case 6:
-                MoveInDirIfPossible(new Vector2(-movementDistanceTopBottomX, -movementDistanceTopBottomY));
-                break;
+                if (MoveInDirIfPossible(new Vector2(-movementDistanceTopBottomX, -movementDistanceTopBottomY),objectsTransform))
+                    return true;
+                else
+                    return false;
             default:
                 Debug.LogError("MOVE DIRECTION NUMBER NOT IDenTIFIED");
-                break;
+                return false;
         }
 
     }
 
-    bool MoveInDirIfPossible(Vector3 newVector)
+    bool MoveInDirIfPossible(Vector3 newVector, Transform objectsTransform)
     {
-        if (!CheckForBlocks(newVector.normalized))
+        if (!CheckForBlocks(newVector.normalized,objectsTransform))
         {
-            transform.position += newVector;    //MOVE
+            objectsTransform.position += newVector;    //MOVE
             return true;
         }
         else
         {
-            Debug.Log("HIT A WALL CANT MOVE LOL");
             return false;
         }
     }
 
-    bool CheckForBlocks(Vector2 raycastRotation)
+    bool CheckForBlocks(Vector2 raycastRotation, Transform objectsTransform)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(raycastRotation), 10f);
+        int layer_mask = LayerMask.GetMask("Block");
+        RaycastHit2D hit = Physics2D.Raycast(objectsTransform.position, objectsTransform.TransformDirection(raycastRotation), 10f, layer_mask);
         if (hit)
         {
             return true;
@@ -71,16 +102,5 @@ public class PigMovement : MonoBehaviour
             return false;
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        //CheckForBlocks(Vector2.right);
-        moveDir = 6;
-        MoveToMoveDir();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
 }
