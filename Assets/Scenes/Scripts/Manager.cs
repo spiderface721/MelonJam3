@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-    [SerializeField] private int score;
+    private int score;
+
+    public int sceneToComeBackToIndex;
     
     void Awake() {
         

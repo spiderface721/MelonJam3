@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MinigameManager : MonoBehaviour
 {
+    public int minigameIndex;
+
     [SerializeField] bool isLastMinigame;
 
     [SerializeField] int firstRunBlocks;
@@ -71,7 +73,8 @@ public class MinigameManager : MonoBehaviour
 
     public void HandleLoss()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        FindObjectOfType<Manager>().sceneToComeBackToIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(9);
     }
     
 
