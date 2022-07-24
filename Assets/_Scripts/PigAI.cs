@@ -21,16 +21,20 @@ public class PigAI : MonoBehaviour
 
     PigMovement pigMovement;
     // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         pigMovement = GetComponent<PigMovement>();
         ghostPig = transform.GetChild(0).gameObject;
         if (ghostPig.name != "Ghost Pig")
             Debug.LogError("GHOST PIG IS NOT NAMED GHOST PIG DUUUUDE!");
-        FindBestSequence();
+    }
+    void Start()
+    {
+        
     }
 
-    void FindBestSequence()
+    public List<int> FindBestSequence()
     {
         bool isFirstRun = true;
         for (int i = 0; i < samples; i++)
@@ -49,7 +53,6 @@ public class PigAI : MonoBehaviour
 
                     foreach (GameObject go in listOfEdgeTiles)
                     {
-                        Debug.Log(Vector2.Distance(ghostPig.transform.position, go.transform.position) < closestDst);
                         if (Vector2.Distance(ghostPig.transform.position, go.transform.position) < closestDst)
                         {
                             closestDst = Vector2.Distance(ghostPig.transform.position, go.transform.position);
@@ -63,9 +66,6 @@ public class PigAI : MonoBehaviour
                 }
                 else j--;
             }
-            //Debug.Break();
-                //Debug.Log(currentSequence.Count);
-                //Debug.Log(bestSequence.Count);
             if (currentSequence.Count < bestSequence.Count || isFirstRun)
             {
                 Debug.Log("I CANT SEE A DAMN THING IF IT AINT GUAP");
@@ -79,8 +79,6 @@ public class PigAI : MonoBehaviour
             }
             else if (currentSequence.Count == bestSequence.Count)
             {
-                Debug.Log(closestDst);
-                Debug.Log(bestClosestDst);
                 if (closestDst < bestClosestDst)
                 {
                     Debug.Log("YEP");
@@ -90,6 +88,7 @@ public class PigAI : MonoBehaviour
                 }
             }
         }
+        return bestSequence;
     }
 
     // Update is called once per frame

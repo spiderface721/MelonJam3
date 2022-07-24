@@ -9,8 +9,27 @@ public class PigMovement : MonoBehaviour
     [SerializeField] float movementDistanceTopBottomX;
     [SerializeField] float movementDistanceTopBottomY;
 
+    [SerializeField] List<int> bestSequence = new List<int>();
+
+    PigAI pigAI;
+
     public int moveDir;    //1 - left, rest clockwise
 
+    void Start()
+    {
+        pigAI = GetComponent<PigAI>();
+        DoBestMoves(3);
+    }
+    public void DoBestMoves(int movesAmount)
+    {
+        bestSequence = pigAI.FindBestSequence();
+        for (int i = 0; i < movesAmount; i++)
+        {
+            Debug.Log("MOVE bih GET OUT THE WAy");
+            moveDir = bestSequence[i];
+            MoveToMoveDir(transform);
+        }
+    }
     public int RandomizeDir()
     {
         moveDir = Random.Range(1, 7);
@@ -66,7 +85,6 @@ public class PigMovement : MonoBehaviour
         }
         else
         {
-            Debug.Log("HIT A WALL CANT MOVE LOL");
             return false;
         }
     }
@@ -84,17 +102,5 @@ public class PigMovement : MonoBehaviour
             return false;
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        //CheckForBlocks(Vector2.right);
-        //moveDir = 6;
-        //MoveToMoveDir(transform);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
