@@ -12,10 +12,12 @@ public class PigMovement : MonoBehaviour
 
     [SerializeField] List<int> bestSequence = new List<int>();
 
-    [SerializeField] Vector2 target;
-    [SerializeField] bool isMovingToTarget;
+    //[SerializeField] Vector2 target;
+    public bool isMovingToTarget;
     [SerializeField] float moveSpeed;
     [SerializeField] List<Vector3> targetsList = new List<Vector3>();
+
+    [SerializeField] float wallDetectionDst;
      
     PigAI pigAI;
 
@@ -24,7 +26,7 @@ public class PigMovement : MonoBehaviour
     void Start()
     {
         pigAI = GetComponent<PigAI>();
-        DoBestMoves(1);
+        //DoBestMoves(1);
     }
 
     void Update()
@@ -34,6 +36,7 @@ public class PigMovement : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, targetsList[0], moveSpeed * Time.deltaTime);    
             if (transform.position.x == targetsList[0].x && transform.position.y == targetsList[0].y)
             {
+                Debug.Log("REACHED TARGET!");
                 targetsList.RemoveAt(0);
                 if (!targetsList.Any())
                 {
@@ -42,14 +45,15 @@ public class PigMovement : MonoBehaviour
             }
         }
     }
-    public void DoBestMoves(int movesAmount)
+    public void DoBestMoves(int movesAmount, bool isSlow)
     {
         bestSequence = pigAI.FindBestSequence();
         for (int i = 0; i < movesAmount; i++)
         {
             Debug.Log("MOVE bee GET OUT THE WAy");
             moveDir = bestSequence[i];
-            MoveToMoveDir(transform, true);
+            
+            MoveToMoveDir(transform, isSlow);
         }
     }
     public int RandomizeDir()
@@ -104,15 +108,14 @@ public class PigMovement : MonoBehaviour
         {
             if (isSlow)
             {
-                Debug.Log("HEY!");
                 if (!targetsList.Any())
                 {
-                    targetsList.Add(newVector);
+                    Debug.Log(newVector);
+                    targetsList.Add(transform.position + newVector);
                 }
                 else
                 {
                     Vector2 finalTarget;
-                Debug.Log(targetsList.Count);
                     finalTarget = newVector + targetsList[targetsList.Count - 1];
                     targetsList.Add(finalTarget);         //MOVE THE REAL PIG
                 }
@@ -120,6 +123,7 @@ public class PigMovement : MonoBehaviour
             }
             else
             {
+                Debug.Log("NEEEEI");
                 objectsTransform.position += newVector;    //TP
             }
             return true;
@@ -133,7 +137,7 @@ public class PigMovement : MonoBehaviour
     bool CheckForBlocks(Vector2 raycastRotation, Transform objectsTransform)
     {
         int layer_mask = LayerMask.GetMask("Block");
-        RaycastHit2D hit = Physics2D.Raycast(objectsTransform.position, objectsTransform.TransformDirection(raycastRotation), 10f, layer_mask);
+        RaycastHit2D hit = Physics2D.Raycast(objectsTransform.position, objectsTransform.TransformDirection(raycastRotation), wallDetectionDst, layer_mask);
         if (hit)
         {
             return true;
