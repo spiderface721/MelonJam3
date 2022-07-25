@@ -123,6 +123,108 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &8953968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8953971}
+  - component: {fileID: 8953970}
+  - component: {fileID: 8953969}
+  m_Layer: 0
+  m_Name: bg (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &8953969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8953968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2a8f9472da2ce46b691e5a288d8b92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 21300000, guid: ff4eafcbacc8ee740a352e226dca8b0e, type: 3}
+  - {fileID: 21300000, guid: 6034ab186c6ce0f4abbbc14c5b64ef2a, type: 3}
+  - {fileID: 21300000, guid: 1f3eca80c77d40640a6e80c105ce974c, type: 3}
+  - {fileID: 21300000, guid: b6030c0c77c0b164ca3a4669fcfc07d3, type: 3}
+--- !u!212 &8953970
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8953968}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: b6030c0c77c0b164ca3a4669fcfc07d3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &8953971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8953968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0138, y: -0.0174, z: 1}
+  m_LocalScale: {x: 0.46604076, y: 0.46556404, z: 1.2573961}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &57296949
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 9.861336, y: 23.22902}
+  scrollPos: {x: 283.97894, y: -48.535625}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 477.8
@@ -371,9 +473,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 57296952}
+  - {fileID: 57297046}
   selectedCommands:
-  - {fileID: 57297082}
+  - {fileID: 57297040}
   variables: []
   description: 
   stepPause: 0
@@ -2912,7 +3014,7 @@ MonoBehaviour:
   itemId: 84
   indentLevel: 0
   soundClip: {fileID: 8300000, guid: d72cfc5890af89648a9b6eb4d3f3eeb6, type: 3}
-  volume: 1
+  volume: 0.332
   waitUntilFinished: 0
 --- !u!114 &57297041
 MonoBehaviour:
@@ -3453,17 +3555,17 @@ MonoBehaviour:
   staticEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1994569827}
-        m_TargetAssemblyTypeName: ImageChange, Assembly-CSharp
-        m_MethodName: nextImage
-        m_Mode: 1
+      - m_Target: {fileID: 8953968}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   booleanParameter:
     booleanRef: {fileID: 0}
@@ -3945,7 +4047,7 @@ MonoBehaviour:
   itemId: 130
   indentLevel: 0
   soundClip: {fileID: 8300000, guid: 9f93eb84a4469ee4eb36180ca5b1f7eb, type: 3}
-  volume: 0.369
+  volume: 0.11
   loop: 1
 --- !u!114 &57297077
 MonoBehaviour:
@@ -4006,7 +4108,7 @@ MonoBehaviour:
   itemId: 134
   indentLevel: 0
   soundClip: {fileID: 8300000, guid: 9e8a65e729d20bf419e6a8067a395761, type: 3}
-  volume: 1
+  volume: 0.213
   waitUntilFinished: 1
 --- !u!114 &57297080
 MonoBehaviour:
@@ -4023,7 +4125,7 @@ MonoBehaviour:
   itemId: 133
   indentLevel: 0
   soundClip: {fileID: 8300000, guid: 9e8a65e729d20bf419e6a8067a395761, type: 3}
-  volume: 1
+  volume: 0.228
   waitUntilFinished: 1
 --- !u!114 &57297081
 MonoBehaviour:
@@ -4486,7 +4588,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &280266550
 GameObject:
@@ -4945,7 +5047,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &476666178
 GameObject:
@@ -6629,7 +6731,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1622070442
 GameObject:
@@ -6896,7 +6998,7 @@ RectTransform:
   - {fileID: 173881574}
   - {fileID: 1055167801}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7128,7 +7230,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.561}
 --- !u!1 &1832272368
 GameObject:
@@ -7863,7 +7965,7 @@ Transform:
   m_Children:
   - {fileID: 1279747154}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2102243493
 GameObject:
