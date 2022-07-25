@@ -257,7 +257,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 57296952}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 57297123}
   variables: []
   description: 
   stepPause: 0
@@ -1040,7 +1041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 93
   indentLevel: 0
-  storyText: The chair spins around, revealing a woman clad in a sharp black suit.{wc]Her
+  storyText: The chair spins around, revealing a woman clad in a sharp black suit.{wc}Her
     eyes are narrow, filled with a feeling you cannot discern.
   description: 
   character: {fileID: 0}
@@ -3317,7 +3318,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ending 1.
+  m_text: Ending 2.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4837,7 +4838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: You
-  nameColor: {r: 1, g: 1, b: 1, a: 1}
+  nameColor: {r: 0.23584908, g: 0.18823427, b: 0.18823427, a: 1}
   soundEffect: {fileID: 0}
   portraits: []
   portraitsFace: 0

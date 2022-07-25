@@ -53,6 +53,7 @@ public class MinigameManager : MonoBehaviour
 
     public void HandleWin()
     {
+        print(GameObject.FindGameObjectWithTag("manager").gameObject.GetComponent<Manager>().getScore());
         if (isLastMinigame)
         {
             if (GameObject.FindGameObjectWithTag("manager").gameObject.GetComponent<Manager>().getScore() >= 13)
