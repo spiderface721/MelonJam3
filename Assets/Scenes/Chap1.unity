@@ -259,6 +259,8 @@ GameObject:
   - component: {fileID: 57297078}
   - component: {fileID: 57297080}
   - component: {fileID: 57297079}
+  - component: {fileID: 57297082}
+  - component: {fileID: 57297081}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -320,6 +322,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 57296955}
   - {fileID: 57296965}
+  - {fileID: 57297082}
   - {fileID: 57296973}
   - {fileID: 57296959}
   - {fileID: 57296964}
@@ -356,10 +359,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 394.56705, y: -48.535656}
+  scrollPos: {x: 9.861336, y: 23.22902}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 400
+  blockViewHeight: 477.8
   zoom: 0.8500004
   scrollViewRect:
     serializedVersion: 2
@@ -368,9 +371,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 57296979}
+  - {fileID: 57296952}
   selectedCommands:
-  - {fileID: 57296974}
+  - {fileID: 57297082}
   variables: []
   description: 
   stepPause: 0
@@ -2099,6 +2102,7 @@ MonoBehaviour:
   - {fileID: 57297059}
   - {fileID: 57297057}
   - {fileID: 57297077}
+  - {fileID: 57297081}
   - {fileID: 57297063}
   suppressAllAutoSelections: 0
 --- !u!114 &57297015
@@ -4021,6 +4025,38 @@ MonoBehaviour:
   soundClip: {fileID: 8300000, guid: 9e8a65e729d20bf419e6a8067a395761, type: 3}
   volume: 1
   waitUntilFinished: 1
+--- !u!114 &57297081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57296949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b359b09a7ba2e4af981f07c07f8af85a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 136
+  indentLevel: 0
+--- !u!114 &57297082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57296949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1902400ccc99b45d69ad01cb86b57d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 135
+  indentLevel: 0
+  musicClip: {fileID: 8300000, guid: 018fc7cbeb27d1540a1fd0a2a646a838, type: 3}
+  atTime: 0
+  loop: 1
+  fadeDuration: 1
 --- !u!1 &58741986
 GameObject:
   m_ObjectHideFlags: 0
