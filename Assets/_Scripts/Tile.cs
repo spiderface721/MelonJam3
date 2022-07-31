@@ -8,11 +8,13 @@ public class Tile : MonoBehaviour
 
     [SerializeField] bool isEdge;
 
+    PigMovement pigMovement;
     MinigameManager minigameManager;
     // Start is called before the first frame update
     void Awake()
     {
-        minigameManager = FindObjectOfType<MinigameManager>();    
+        minigameManager = FindObjectOfType<MinigameManager>();
+        pigMovement = FindObjectOfType<PigMovement>();
     }
     void Start()
     {
@@ -25,18 +27,25 @@ public class Tile : MonoBehaviour
 
     public void OnClick()
     {
-        if (minigameManager.blocksAvailable > 0)
+        if (Vector2.Distance(pigMovement.transform.position, transform.position) > 0.25f)
         {
-            Instantiate(blockPrefab, transform.position, Quaternion.identity);
-            minigameManager.blocksAvailable--;
-            if (minigameManager.blocksAvailable <= 0)
+            if (minigameManager.blocksAvailable > 0)
             {
-                minigameManager.isHandlingPlacing = false;
+                Instantiate(blockPrefab, transform.position, Quaternion.identity);
+                minigameManager.blocksAvailable--;
+                if (minigameManager.blocksAvailable <= 0)
+                {
+                    minigameManager.isHandlingPlacing = false;
+                }
             }
-        }
+            else
+            {
+                Debug.Log("NO BLOCKS AVAILABLEEEEEE!");
+            }
+        } 
         else
         {
-            Debug.Log("NO BLOCKS AVAILABLEEEEEE!");
+            Debug.Log("CANT PLKACE BLOCKS ON THIS GUY!!!");
         }
     }
 
